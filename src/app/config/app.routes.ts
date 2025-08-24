@@ -3,16 +3,16 @@ import { TransactionHistoryComponent } from '../presentation/pages/transaction-h
 
 export const routes: Routes = [
     {
-        path: '', 
+        path: 'dashboard', 
         loadChildren: () => import('../presentation/main.routes').then(m => m.default)
     },
-    // {
-    //     path: 'historial', 
-    //     component: TransactionHistoryComponent
-    // },
-    // {
-    //     path: '', 
-    //     redirectTo: 'dashboard', 
-    //     pathMatch: 'full'
-    // }
+    {
+        path: 'historial', 
+        component: TransactionHistoryComponent
+    },
+    {
+        path: '', 
+        redirectTo: 'dashboard', 
+        pathMatch: 'full'
+    }
 ];

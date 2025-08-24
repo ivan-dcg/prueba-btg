@@ -6,24 +6,25 @@ import { FundsComponent } from './pages/funds/funds.component';
 const routes: Routes = [
   {
     path: '',
-    component: MainComponent,
-    children: [
+    component: FundsComponent,
+    
+    // children: [
     //   {
-    //     path: 'dashboard',
-    //     redirectTo: 'fondos',
-    //     pathMatch: 'full'
+    //     path: 'fondos',
+    //     component: FundsComponent
     //   },
-      {
-        path: 'fondos',
-        component: FundsComponent
-      },
-      {
-        path: 'historial',
-        component: TransactionHistoryComponent,
-        title: 'Historial de Transacciones'
-      }
-    ]
-  }
+    //   {
+    //     path: 'historial',
+    //     component: TransactionHistoryComponent,
+    //     title: 'Historial de Transacciones'
+    //   }
+    // ]
+  },
+//   {
+//     path: 'historial',
+//     component: TransactionHistoryComponent,
+//     title: 'Historial de Transacciones'
+//   }
 ];
 
 export default routes;
