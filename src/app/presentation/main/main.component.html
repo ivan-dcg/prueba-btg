@@ -1,6 +1,11 @@
-<h1>Pagina principal</h1>
-<br>
-<br>
-<br>
-<app-funds></app-funds>
-<router-outlet></router-outlet>
+<div class="container">
+    <app-side-bar></app-side-bar>
+
+    <main class="main-content">
+      <app-header></app-header>
+
+      <section class="funds-section">
+        <router-outlet></router-outlet>
+      </section>
+    </main>
+  </div>

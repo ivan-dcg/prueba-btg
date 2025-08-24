@@ -20,7 +20,7 @@ export  class FundApiService extends FundRepository {
   }
 
   getAll(): Observable<Fund[]> {
-    return this.http.get<Array<Fund>>(this._url);
+    return this.http.get<Array<Fund>>(this._url+'funds');
   }
 
 }

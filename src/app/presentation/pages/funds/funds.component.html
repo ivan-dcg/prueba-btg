@@ -1,1 +1,22 @@
-<p>funds works!</p>
+<h1>Fondos Disponibles</h1>
+        <table class="funds-table">
+          <thead>
+            <tr>
+              <th>Fondo</th>
+              <th>Monto Mínimo</th>
+              <th>Categoría</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (fund of funds; track fund.id) {
+                <tr>
+                    <td>{{fund.name}}</td>
+                    <td>{{fund.minAmount}}</td>
+                    <td>{{fund.categoryId}}</td>
+                    <td><button class="subscribe">Suscribirse</button></td>
+                  </tr>
+            }
+            
+          </tbody>
+        </table>

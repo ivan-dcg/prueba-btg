@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+
+  /* 📱 Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 10px;
+    }
+  
+    .sidebar h2 {
+      display: none;
+    }
+  
+    .sidebar ul {
+      flex-direction: row;
+      gap: 10px;
+    }
+  
+    .main-content {
+      padding: 10px;
+    }
+  
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .funds-table th,
+    .funds-table td {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .subscribe {
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .user-info {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .sidebar ul {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .funds-section h1 {
+      font-size: 20px;
+      text-align: center;
+    }
+  
+    .funds-table {
+      font-size: 13px;
+    }
+  }
