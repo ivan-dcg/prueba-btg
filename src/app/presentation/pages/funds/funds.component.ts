@@ -26,12 +26,7 @@ export class FundsComponent implements OnInit {
     private _serviceTrans: TransactionApiService,
     private _dataService: DataService
   ) { 
-    this._serviceSub.getAll()
-    .subscribe(
-      (data: Subscription[]) => {
-        localStorage.setItem('subscriptions', JSON.stringify(data))
-      }
-    );
+    this.getSubscriptions();
   }
 
   responseFund$: Observable<Fund[]> | undefined;
@@ -53,6 +48,15 @@ export class FundsComponent implements OnInit {
       }
     );
   }
+
+  getSubscriptions() {
+    this._serviceSub.getAll()
+    .subscribe(
+      (data: Subscription[]) => {
+        localStorage.setItem('subscriptions', JSON.stringify(data))
+      }
+    );
+  }
   
   subscribeFund(fund:Fund, action:string) {
     if(this._dataService.currentValue < fund.minAmount) {
@@ -67,6 +71,7 @@ export class FundsComponent implements OnInit {
         const newValue = (action === 'Suscribirse') ? this._dataService.currentValue - fund.minAmount : this._dataService.currentValue + fund.minAmount;
         this._dataService.sendValue(newValue);
         this.saveTransaction(String(data.id), fund.id, action);
+        this.getSubscriptions();     
       })
   }
 
@@ -75,7 +80,7 @@ export class FundsComponent implements OnInit {
     const dateNow = new Date().toString();
     const transaction:Transaction = { "subscriptionId": id, "userId": "1", "fundId": fundId,  "createdAt": dateNow, "type": type }
     this._serviceTrans.save(transaction)
-    .subscribe(resp => console.log(resp))
+    .subscribe(resp => this.getFunds())
   }
 
 
