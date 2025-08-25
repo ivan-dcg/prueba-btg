@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     const userString = sessionStorage.getItem('user');
     this.user = userString ? JSON.parse(userString) : null;
     this._dataService.sendValue(this.user.accountBalance)
-    console.log(this.user);
   }
 
   ngOnInit() {
