@@ -1,0 +1,16 @@
+<div class="container" *ngIf="isLoggedIn; else auth ">
+    <app-side-bar></app-side-bar>
+
+    <main class="main-content">
+      <app-header></app-header>
+
+      <section class="funds-section">
+        <router-outlet />
+      </section>
+    </main>
+</div>
+
+
+<ng-template #auth>
+  <app-login (loggedIn)="validateLogin($event)"></app-login>
+</ng-template>

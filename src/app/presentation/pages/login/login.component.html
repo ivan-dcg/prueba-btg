@@ -1,0 +1,19 @@
+<div class="form-box">
+    <div class="wrapper">
+        <div class="img-area">
+            <img src="img-fund.png" alt="">
+        </div>
+        <div class="form-area">
+            <h3>Login Form</h3>
+        <form [formGroup]="form" (ngSubmit)="login()">
+            <div class="single-form">
+                <input type="text" placeholder="Username" formControlName="email"/>
+            </div>
+            <div class="single-form">
+                <input type="password" placeholder="Password" formControlName="password"/>
+            </div>
+            <input type="submit" value="Login" [disabled]="!form.valid" [class.disable]="!form.valid"/>
+        </form>
+        </div>
+    </div>
+</div>
