@@ -20,11 +20,11 @@ export  class TransactionApiService extends TransactionRepository {
   }
 
   getAll(): Observable<Transaction[]> {
-    return this.http.get<Array<Transaction>>(this._url);
+    return this.http.get<Array<Transaction>>(this._url+'transactions');
   }
 
   save(transaction: Transaction): Observable<void> {
-    return this.http.post<void>(this._url, transaction);
+    return this.http.post<void>(this._url+'transactions', transaction);
   }
 
 }

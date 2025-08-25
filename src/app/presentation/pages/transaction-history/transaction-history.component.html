@@ -1,1 +1,21 @@
-<p>transaction-history works!</p>
+<h1>Historial de transacciones</h1>
+        <table class="funds-table">
+          <thead>
+            <tr>
+              <th>Fondo</th>
+              <th>fecha</th>
+              <th>Tipo</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (tr of transaction; track tr.id) {
+                <tr>
+                    <td>{{ getName(tr.fundId) }}</td>
+                    <td>{{tr.createdAt | date: 'yyyy-MM-dd'}}</td>
+                    <td>{{ tr.type }}</td>
+                  </tr>
+            }
+            
+          </tbody>
+        </table>
+

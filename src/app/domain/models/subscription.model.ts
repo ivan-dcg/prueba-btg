@@ -1,5 +1,5 @@
 export class Subscription {
-    id!: string;
+    id?: string;
     userId!: string;
     fundId!: string;
     amount!: number;

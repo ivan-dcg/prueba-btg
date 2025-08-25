@@ -16,15 +16,15 @@ export  class SubscriptionApiService extends SubscriptionRepository {
   constructor(private http: HttpClient) {super();}
 
   getByID(id: String): Observable<Subscription> {
-    return this.http.get<Subscription>(this._url+id);
+    return this.http.get<Subscription>(this._url+'subscriptions'+id);
   }
 
   getAll(): Observable<Subscription[]> {
-    return this.http.get<Array<Subscription>>(this._url);
+    return this.http.get<Array<Subscription>>(this._url+'subscriptions');
   }
 
-  save(subscription: Subscription): Observable<void> {
-    return this.http.post<void>(this._url, subscription);
+  save(subscription: Subscription): Observable<Subscription> {
+    return this.http.post<Subscription>(this._url+'subscriptions', subscription);
   }
 
 }

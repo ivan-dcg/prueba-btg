@@ -1,18 +1,20 @@
 import { Routes } from '@angular/router';
 import { TransactionHistoryComponent } from '../presentation/pages/transaction-history/transaction-history.component';
+import { FundsComponent } from '../presentation/pages/funds/funds.component';
 
 export const routes: Routes = [
     {
-        path: 'dashboard', 
-        loadChildren: () => import('../presentation/main.routes').then(m => m.default)
-    },
-    {
-        path: 'historial', 
-        component: TransactionHistoryComponent
+        path: '', 
+        children: [
+            {path: 'fondos', component: FundsComponent},
+            {path: 'historial', component: TransactionHistoryComponent},
+            {path: '', redirectTo: 'fondos', pathMatch: 'full'},
+            
+        ]
     },
     {
         path: '', 
-        redirectTo: 'dashboard', 
-        pathMatch: 'full'
+        redirectTo: 'fondos', 
+        pathMatch: 'prefix'
     }
 ];

@@ -5,6 +5,7 @@
               <th>Fondo</th>
               <th>Monto Mínimo</th>
               <th>Categoría</th>
+              <th>Notificacion</th>
               <th></th>
             </tr>
           </thead>
@@ -13,8 +14,14 @@
                 <tr>
                     <td>{{fund.name}}</td>
                     <td>{{fund.minAmount}}</td>
-                    <td>{{fund.categoryId}}</td>
-                    <td><button class="subscribe">Suscribirse</button></td>
+                    <td>{{ category[fund.categoryId]}}</td>
+                    <td>
+                      <select [selectedIndex]=2>
+                        <option value="1">Email</option>
+                        <option value="2">Sms</option>
+                      </select>
+                    </td>
+                    <td><button class="subscribe" (click)="subscribeFund(fund, getAction(fund.id))">{{getAction(fund.id)}}</button></td>
                   </tr>
             }
             

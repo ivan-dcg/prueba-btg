@@ -2,13 +2,8 @@
     <h2>Fondos</h2>
     <nav>
       <ul>
-        <li class="active">Fondos</li>
-        <li>
-            <a routerLink="/historial">Historial</a>
-            
-        </li>
-        <li>Perfil</li>
-        <li>Notificaciones</li>
+        <li class="active" (click)="navigateToProfile('/fondos')">Fondos</li>
+        <li (click)="navigateToProfile('/historial')">Historial</li>
       </ul>
     </nav>
   </aside>
