@@ -20,6 +20,11 @@ export class LoginComponent {
     password: new FormControl('', Validators.required) 
   });
 
+  constructor() {
+    sessionStorage.clear();
+    localStorage.clear();
+  }
+
 
   login() {
     //sin validación de login
